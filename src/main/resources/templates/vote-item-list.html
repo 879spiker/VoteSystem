@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote Item List</title>
+</head>
+<body>
+    <h1>Vote Item List</h1>
+    
+    <ul>
+        <!-- 列出所有的投票項 -->
+        <li th:each="itemName : ${itemNames}" th:text="${itemName}"></li>
+    </ul>
+    
+    <!-- 添加投票項的表單 -->
+    <form action="/api/vote-items" method="post">
+        <label for="itemName">New Vote Item:</label>
+        <input type="text" id="itemName" name="name">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
+

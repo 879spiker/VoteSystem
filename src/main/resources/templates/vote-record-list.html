@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote Record List</title>
+</head>
+<body>
+    <h1>Vote Record List</h1>
+    
+    <ul>
+        <!-- 列出所有的頭票紀錄 -->
+        <li th:each="voter : ${voters}" th:text="${voter}"></li>
+    </ul>
+    
+    <!-- 天加投票紀錄的表單 -->
+    <form action="/api/create-vote-records" method="post">
+        <label for="voterName">Voter Name:</label>
+        <input type="text" id="voterName" name="voter">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新增投票項目</title>
+</head>
+<body>
+    <h1>新增投票項目</h1>
+    <form action="/api/add-vote-item" method="post" th:object="${voteItem}">
+        <label for="name">投票項目名稱：</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required>
+        <button type="submit">新增</button>
+    </form>
+    <a th:href="@{/}">返回首頁</a>
+</body>
+</html>
